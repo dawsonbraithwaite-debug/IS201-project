@@ -1,0 +1,22 @@
+body {
+    background-color: #e6f2ff; /* background color */
+    font-family: Arial, sans-serif; /* font family */
+    color: #333; /* font color */
+}
+
+.header {
+    background-color: navy;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.content {
+    margin: 20px;
+}
+
+.footer {
+    background-color: lightgray;
+    padding: 15px;
+    text-align: center;
+}

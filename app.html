@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basketball Shot Simulator</title>
+    <p>Can you beat 70% shooting?</p>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background-color: #f4f4f4;
+        }
+
+        .game-box {
+            margin-top: 50px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: none;
+            background-color: orange;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkorange;
+        }
+
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🏀 Basketball Shot Simulator</h1>
+<p>Pick your shot difficulty:</p>
+
+<div class="game-box">
+    <button onclick="shoot(1)">Layup (Easy)</button>
+    <button onclick="shoot(2)">Mid-Range (Medium)</button>
+    <button onclick="shoot(3)">Three Pointer (Hard)</button>
+</div>
+
+<p id="result"></p>
+<p id="score"></p>
+
+<script>
+let made = 0;
+let attempts = 0;
+
+function shoot(difficulty) {
+    attempts++;
+
+    let chance;
+
+    if (difficulty === 1) chance = 0.8;     // easy
+    if (difficulty === 2) chance = 0.5;     // medium
+    if (difficulty === 3) chance = 0.3;     // hard
+
+    let shot = Math.random();
+
+    if (shot < chance) {
+        made++;
+        document.getElementById("result").innerText = "🔥 Swish!";
+    } else {
+        document.getElementById("result").innerText = "❌ Miss!";
+    }
+
+    document.getElementById("score").innerText =
+        "Shots Made: " + made + " / " + attempts;
+}
+</script>
+
+<br><br>
+<a href="scratch.html">Back to Scratch Page</a>
+
+</body>
+</html>
